@@ -28,7 +28,7 @@ Here are the events that are emitted by the server, and the corresponding events
 
 * (required) Server emits `ftp:cwd (string path)` when asked to change the directory. You driver must emit `driver:cwd (string path)` with the path they actually changed to.
 
-* (required) Server emits `ftp:list (string path)` when asked to list the connects of the provided path. Your driver must emit `driver:list (array fileobjects)` where `fileobjects` is an array that contains objects which have the following properties: name, size, type, owner, group, permissions and date.
+* (required) Server emits `ftp:list (string path)` when asked to list the contents of the provided path. Your driver must emit `driver:list (array fileobjects)` where `fileobjects` is an array that contains objects which have the following properties: name, size, type, owner, group, permissions and date.
 
 * More events to come as development continues.
 
@@ -67,11 +67,20 @@ server.on('ftp:list', function(path) {
     group: 'github',
     permissions: 'rwxrw-r--' //unix permissions
   });
+
+  // send that hardcoded file back to the user
+  myDriver.emit('driver:list', files);
 });
 
 // now that we have a driver implemented, we can start the server running!
 server.listen(21, '0.0.0.0'); // you can specify the port and the host for the ftp server
 
+```
+
+You could then run your awesome new custom ftp server with:
+
+```
+node my_driver.js
 ```
 
 ## Contributions
