@@ -1,0 +1,16 @@
+{
+  "author": "Paul Van de Vreede <paul@vdvreede.net> (https://github.com/pvdvreede)",
+  "name": "ftp-custom-server",
+  "description": "FTP server customiser",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">= 0.8"
+  },
+  "dependencies": {
+    "winston": ">= 0.6.2"
+  },
+  "devDependencies": {
+    "mocha": ">= 1.8.1",
+    "ftp": ">= 0.2.8"
+  }
+}
