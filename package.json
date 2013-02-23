@@ -2,7 +2,7 @@
   "author": "Paul Van de Vreede <paul@vdvreede.net> (https://github.com/pvdvreede)",
   "name": "ftp-custom-server",
   "description": "FTP server customiser",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "engines": {
     "node": ">= 0.8"
   },
